@@ -1,0 +1,65 @@
+<app-navigation></app-navigation>
+<div class="card">
+  <div class="card-body">
+    <h1 class="head">Convolutional Neural Network</h1>
+    <p>
+      A Convolutional Neural Network, also known as CNN or ConvNet, is a class
+      of neural networks that specializes in processing data that has a
+      grid-like topology, such as an image. A digital image is a binary
+      representation of visual data. It contains a series of pixels arranged in
+      a grid-like fashion that contains pixel values to denote how bright and
+      what color each pixel should be.
+    </p>
+  </div>
+</div>
+<div>
+  <h4>Convolutional Neural Network Architecture</h4>
+  <p>
+    A CNN typically has three layers: a convolutional layer, a pooling layer,
+    and a fully connected layer.
+  </p>
+  <img class="image" src="../../assets/image/Cnn.webp" />
+  <figcaption class="caption">Architecture of a CNN</figcaption>
+  <h4>Convolution Layer</h4>
+  <p>
+    The convolution layer is the core building block of the CNN. It carries the
+    main portion of the network’s computational load.
+  </p>
+  <p>
+    This layer performs a dot product between two matrices, where one matrix is
+    the set of learnable parameters otherwise known as a kernel, and the other
+    matrix is the restricted portion of the receptive field. The kernel is
+    spatially smaller than an image but is more in-depth. This means that, if
+    the image is composed of three (RGB) channels, the kernel height and width
+    will be spatially small, but the depth extends up to all three channels.
+  </p>
+  <p>
+    During the forward pass, the kernel slides across the height and width of
+    the image-producing the image representation of that receptive region. This
+    produces a two-dimensional representation of the image known as an
+    activation map that gives the response of the kernel at each spatial
+    position of the image. The sliding size of the kernel is called a stride.
+  </p>
+  <p>
+    If we have an input of size W x W x D and Dout number of kernels with a
+    spatial size of F with stride S and amount of padding P, then the size of
+    output volume can be determined by the following formula:
+  </p>
+  <img class="image" src="../../assets/image/cnnformula.webp" />
+  <figcaption class="caption">Formula for Convolution Layer</figcaption>
+  <p>This will yield an output volume of size Wout x Wout x Dout.</p>
+  <img class="image" src="../../assets/image/cnnimg.webp" />
+  <figcaption class="caption">Convolution Operation</figcaption>
+  <h4>Pooling Layer</h4>
+  <p>The pooling layer replaces the output of the network at certain locations by deriving a summary statistic of the nearby outputs. This helps in reducing the spatial size of the representation, which decreases the required amount of computation and weights. The pooling operation is processed on every slice of the representation individually.</p>
+  <p>There are several pooling functions such as the average of the rectangular neighborhood, L2 norm of the rectangular neighborhood, and a weighted average based on the distance from the central pixel. However, the most popular process is max pooling, which reports the maximum output from the neighborhood.</p>
+  <img class="image" src="../../assets/image/pooling.webp" />
+  <figcaption class="caption">Figure 4: Pooling Operation (Source: O’Reilly Media)</figcaption>
+  <p>If we have an activation map of size W x W x D, a pooling kernel of spatial size F, and stride S, then the size of output volume can be determined by the following formula:</p>
+  <img class="image" src="../../assets/image/pading lay.webp" />
+  <figcaption class="caption">Formula for Padding Layer</figcaption>
+  <p>This will yield an output volume of size Wout x Wout x D.</p>
+  <p>In all cases, pooling provides some translation invariance which means that an object would be recognizable regardless of where it appears on the frame</p>
+  <h4>Fully Connected Layer</h4>
+  <p>Neurons in this layer have full connectivity with all neurons in the preceding and succeeding layer as seen in regular FCNN. This is why it can be computed as usual by a matrix multiplication followed by a bias effect.</p>
+</div>
